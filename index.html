@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLL</title>
+   
+</head>
+<body>
+  
+    <hr>
+    <h1  style="text-align: center;"> <a href="https://www.kletech.ac.in/">  KLE Technological University</a> </h1>
+    <h1  style="text-align: center;">School of Electronics and Communication</h1>
+    <h1 style="text-align: center;">Senior Design Project</h1>
+    <h2 style="text-align: center;">On</h2>
+    <h1  style="text-align: center;">Delta-Sigma ADC</h1>
+    <h2 style="text-align: center;">Team members : <a href="https://www.linkedin.com/in/vishal-kumar-906211200/">Rajath P R    ||</a>  <a href="https://www.linkedin.com/in/prasannakumar-haveri-669399211/">Rajath Jingade    ||</a> <a href="https://www.linkedin.com/in/basavaraj-managur-25b65a20a/">Rahul Pammar    ||</a> <a href="https://www.linkedin.com/in/amar-g-m/">Sanket S D      </a></h2>
+<h2  style="text-align: center;">Guide : Dr.Sujata Kotabagi</h2> 
+    <hr>
+    <hr>
+   <h1  style="text-align: center;">ACKNOWLEDGMENT</h1>
+   <br>
+   <section>On the very onset of this report, we would like to extend our sincere and heartfelt obligation
+towards all the personages who have helped us in this project. We express our sincere thanks
+to Nalini C. Iyer(Head of school), N. H. Ayachit (Registrar) of School of Electronics Communication Engineering for encouraging us to the highest peak and for their tremendous support.
+Without the active guidance, help, cooperation, encouragement we would not have made
+head way in the senior design project, we would like to express our sincere gratitude to our project
+guide Prof.Sujata S K and to our co-guide for their guidance and constant supervision as well
+as for providing information regarding the project.
+Also, the research papers mentioned in the literature survey helped us in understand how to
+design a Delta-Sigma ADC along with the detailed explanation.
+We would also like to thank K.L.E Technological University for providing us such an opportunity for gaining knowledge and learning new things. We would like to thank our supporting
+staff for providing us basic needs to complete our project and finally thanks to our colleagues in
+providing us insight and ideas for project.</section>
+</section>
+    <hr>
+   <h1  style="text-align: center;">ABSTRACT</h1> 
+    <section>Delta Sigma ADC is essential building block of every integrated circuit.
+The electronics systems such as televisions,hearing aids,
+music recorders (mic and speaker), microcontrollers (like Arduino, 8051
+microcontroller,ARM 7 etc) uses this Analog to digital conversion as means of communications.
+With the Internet of Things (IoT) rapidly becoming a part of everyday life,
+these digital devices must be able to interpret real-world/time signals in 
+order to reliably offer crucial information.The aim of our project is provide high accuracy,high resolution,low latency,low power delta sigma ADC. It is carried out using UMC180nm CMOS technology 
+in Cadance Virtuoso tool.</section>
+   
+    <hr>
+    <div>
+        <h1  style="text-align: center;">CONTENTS</h1>
+        <ol  style="text-align: center; list-style: none;" >
+          <a href="#chapter1"> <li> Introduction </li></a> 
+          <a href="#chapter2"> <li>System Design </li></a> 
+          <a href="#chapter3"> <li>Implementation details </li></a> 
+          <a href="#chapter4"> <li>Results and Discussions </li></a> 
+          <a href="#chapter5"> <li>Conclusion and future scope </li></a> 
+          <a href="#chapter6"> <li>References </li></a>  
+        </ol>
+
+    </div>
+    <hr>
+    <div id="chapter1">
+        <h1  style="text-align: center;">Chapter : 01</h1>
+        <h1  style="text-align: center;">INTRODUCTION</h1>
+        <hr>
+        <section>
+           Advances in integrated circuit (IC) technology have made it possible to build digital logic on silicon in a more compact and efficient manner. Many sorts of signal processing were shifted to the digital world as a result of this.Data converters, such as Analog-to-Digital converters (ADC) and Digital-to-Analog converters (DAC), are one of the most common types of this.When high resolution is required, consecutive approximation or dual slope ADCs are used, among the many Analog-to-Digital data converters. On the other hand,trimming is required to obtain higher accuracy.The design of high precision sample and hold circuits is the key constraint when adopting these systems.Over sampling converters replace complicated and precise analogue components with digital signal processing techniques, allowing for far better resolution than Nyquist rate converters.Oversampling ADCs are very immune to analogue circuit defects, making them a good alternative for implementing embedded ADC interfaces in current systems-on-chip (SoCs).
+  
+        </section>
+        <h2 >1.1  Motivation</h2>
+        <section>ADCs (analog-to-digital converters) are widely utilised in practically all types of electronics. Signals such as sound, image, and other information are analogue in the real world, but electronic equipment can only process digital signals, hence all analogue signals must be transformed to digital signals.Such conversions are expected to be completed by an ADC.It converts analogue signals (voltages, currents, and so on) into digital signals (usually binary), which are then processed by a digital signal processor (DSP) in electrical devices.A digital-to-analog converter (DAC), on the other hand, works in the other direction. A DAC converts,digital signals processed by a DSP to analogue signals so that people may hear music, see images, and so on.
+        </section>
+        <h2 >1.2 Objectives</h2>        <section>
+        The main objective of our project is to design low power,performance efficient,
+high accuracy,high resolution,low latency, Delta Sigma ADC.
+        
+        <h2>1.4 Problem statement</h2>
+        <section>Design and Implementation of Delta-Sigma ADC to meet following requirements for specifications given below:
+ Supply or Input voltage - 1.8 V ,
+ Sampling frequency - 10 MHz ,
+ OSR - 250 ,
+ Power Dissipation - 40mW ,
+ Reference voltage - 1.2 V ,
+ SNR - 86dB ,
+ SNDR - 70dB ,
+ Efficiency - 76\% ,
+ Power Dissipation (Pdiss) ≤ 200 µW , 
+ Slew Rate (SR) ≥ 100 V/µs ,
+ Load Capacitance (CL) = 100 fF , 
+ Supply (VDD) = 1.8 V , 
+ DC Gain = 76 dB ,
+ Bandwidth = 226.7 Hz ,
+ UGF = 183.6 MHz ,
+ Phase Margin = 57.4◦ ,
+ Power Dissipation = 486 µW ,
+ Technology process UMC180nm PDK.
+        </section></section>
+
+    </div>
+    <hr>
+    <div id="chapter2">
+        <h1  style="text-align: center;">Chapter : 02</h1>
+    <h1  style="text-align: center;">System Design</h1>
+    <hr>
+    <section>In this chapter, the design best suited for the application and which satisfies the specifications is been discussed. In this section there are subtopics like Functional block diagram ,Design alternatives and final design.
+block diagram.
+    </section>
+    <h2>2.1 Functional Block Diagram</h2>
+    <img  src="https://amargm.github.io/Phase-Locked-Loop/images/block%20dia.png" alt="Block diagram of PLL" class="align" >
+    <section>Their are 3 major blocks involved:<br>
+  <br> 1]Delta-Sigma Modulator
+  <br> 2]Digital Filter
+  <br>3]Decimator
+  <br>- An analogue signal is first applied to the converter's input and it must be slow enough for the converter to sample it numerous times, a process known as oversampling.The sampling rate at the output ports is hundreds of times quicker than the digital result.
+<br> - The digital/decimation filter than "averages" each individual sample over time with the other input-signal samples.
+<br> - The major block which we are discussing in this thesis,is Delta-Sigma Modulator.
+    </section>
+    <h2>2.2 Main Functional block diagram</h2>
+    <section>
+        - A delta-sigma converter creates a stream of 1-bit codes by combining several samples from the modulator.
+The delta-sigma ADC performs this objective by employing a high-rate input-signal quantizer. The delta-sigma modulator, like all quantizers, receives an input and generates a stream of digital numbers that reflect the input voltage.<br>
+- The modulator calculates the difference between the analogue input signal and the feedback DAC's analogue output signal.The analog-voltage output of the summing junction is then measured by an integrator, which sends a sloping signal to the 1-bit ADC. The integrator's output signal is converted to a digital one or zero by the 1-bit ADC.
+<br>- The ADC transmits the 1-bit digital signal to the modulator's output as well as back through the feedback loop, where a 1-bit DAC is waiting, using the system clock.There is a digital/decimator circuit following the modulator in the delta-sigma ADC. The modulator stream of 1-bit codes is sampled and filtered using this circuit.
+<br> - Oversampling sigma-delta modulators work on the basis of a trade-off between signal bandwidth and resolution.A low resolution ADC's quantization noise is high-pass filtered to provide low quantization noise at low frequencies. A digital filter removes noise at high frequencies before the signal is decimated to form the converter's final output.
+    </section>
+    <h2>2.2 Design Alternatives</h2>
+    <section>
+        In this section we will discuss about different design alternatives of analog to digital converters,like Flash-ADC, SAR-ADC, Dual-Slope ADC, Single-slope ADC, Pipeline ADC, according to the necessity of applications.
+    </section>
+    <h2>2.2.1 SAR-ADC:</h2>
+
+    <img src="https://amargm.github.io/Phase-Locked-Loop/images/Types%20in%20PD.png" alt="Designs of PD" class="align">
+    <br>
+    <section>
+        Successive approximation register (SAR) ADCs are appealing and commonly utilised in biomedical health-care systems because to their simple form and good energy efficiency.However, such a converter must be addressed for the issues of power dissipation, performance efficiency, and occupied area in order to achieve an appropriate conversion rate.
+
+    </section>
+
+    <h2>2.2.2 Flash-ADC:</h2>
+    <img src="https://amargm.github.io/Phase-Locked-Loop/images/alt%20design%20of%20CP.png" alt="alternate design of CP " class="align">
+
+    <br>
+
+    <section>A flash ADC (also called a direct-conversion ADC) compares the input voltage to successive reference voltages using a linear voltage ladder with a comparator at each "rung" of the ladder.
+ The above diagram is how a 3-bit flash type ADC works. Eight equal resistors make up the voltage divider network. With regard to the ground, a reference voltage V R is delivered over the entire network.
+From bottom to top, the voltage drop across each resistor with respect to ground will be integer multiples (from 1 to 8) of V R 8.
+    </section>
+
+    <h2>2.2.3 Dual Slope ADC:</h2>
+    <img src="https://amargm.github.io/Phase-Locked-Loop/images/types%20in%20VCO.png " alt="different designs of VCO" class="align">
+
+    <br>
+    <section> The integrator generates two separate ramps in a dual slope type ADC,One has a known analogue input voltage Vin, while the other has a known reference voltage –Vref. As a result, it's known as a dual slope A to D converter.A switch on the input side of a dual-slope analogue to digital converter's integrator can connect to either a reference voltage or an input voltage.But it has a slow conversion rate, usually in the 10 samples/second range,leading to reduction in the efficiency.
+ 
+    </section>
+    
+    <h2>2.2.3 Single Slope ADC :</h2>
+    <img src="https://amargm.github.io/Phase-Locked-Loop/images/types%20in%20VCO.png " alt="different designs of VCO" class="align">
+
+    <br>
+    <section> The integrator generates two separate ramps in a dual slope type ADC,One has a known analogue input voltage Vin, while the other has a known reference voltage –Vref. As a result, it's known as a dual slope A to D converter.A switch on the input side of a dual-slope analogue to digital converter's integrator can connect to either a reference voltage or an input voltage.But it has a slow conversion rate, usually in the 10 samples/second range,leading to reduction in the efficiency.
+ 
+    </section>
+    </div>
+
+    <div id="chapter3">
+        <hr>
+        <h1  style="text-align: center;">Chapter : 03</h1>
+     <h1  style="text-align: center;">Implementation details</h1>
+     <hr>
+    In this chapter, the proposed Delta-Sigma ADC architecture is discussed in detail with its specifications. The different blocks of Delta-Sigma ADC is also discussed in brief.
+     <h2>3.2 Proposed architecture</h2>
+     <section>The proposed architecture of Sigma-Delta ADC has various blocks like Fully Differecial Amplifier,Latched comparator,Non-overlaping clock generator etc.
+    </section>
+    
+    <h2>3.2.1 TG-Switch</h2>
+   
+    <section> The design of sampling switches is one of the most fundamental parts of constructing an ADC. Switches should ideally have zero ON resistance and infinite OFF resistance. MOS transistors in the triode area can be utilised as switches, with ON resistances ranging from a few ohms to a few kilo ohms and extremely high OFF resistances.
+    <img src="https://amargm.github.io/Phase-Locked-Loop/images/types%20in%20VCO.png " alt="different designs of VCO" class="align">
+
+    <br>
+In addition to the limited ON resistances, the switch has parasitic capacitances that, when taken into consideration, can cause charge injection and clock feed through, resulting in gain or offset inaccuracy in the converter's performance.
+A NMOS switch is a type of switch that is widely utilised.
+High ON resistance for input values near to the power source is a serious concern for the NMOS switch (VDD).Complementary switches or transmission gates, which consist of a PMOS in parallel with an NMOS transistor, can be utilised to tolerate larger swings, as seen in Figure.
+    </section>
+           <h2>3.2.2 Non-Overlapping Circuit</h2>
+   
+    <section> The design of sampling switches is one of the most fundamental parts of constructing an ADC. Switches should ideally have zero ON resistance and infinite OFF resistance. MOS transistors in the triode area can be utilised as switches, with ON resistances ranging from a few ohms to a few kilo ohms and extremely high OFF resistances.
+  <section>
+  
+  <h2>3.2.3 Sample And Hold Circuit</h2>
+   <section>
+   The Sample and Hold circuit is an electronic circuit that creates voltage samples from the input and then holds those samples for a set amount of time.The sampling time is the amount of time that the sample and hold circuit takes to obtain a sample of the input signal. Similarly, holding time refers to the length of time that the circuit maintains the sampled value.
+The sampling time is typically 1 to 14 seconds, whereas the holding duration can be whatever the application requires.
+This is due to the fact that the capacitor in it charges to its maximum value when the switch is opened, i.e. during sampling, and then holds the sampled voltage when the switch is closed.     
+ <h2>3.2.4 Fully Differential Amplifier</h2>
+   <section>
+   Analog and mixed signal design require operational amplifiers. The transistor dimensions are rapidly decreasing due to advancements in process technology, resulting in a lower r0.Amplifiers offer a relatively poor low frequency gain in the deep sub-micron realm as a result of this.At the design level, applications that require high gain amplifiers suffer. Even multi-stage systems can't achieve a gain of more than 60 dB. Designers must now rely on alternative methods such as gain boosting architectures.Keeping all transistors in saturation is typically difficult, especially in cascode systems. The purpose of this is to provide a simplified design method for creating a fully differential gain boosted folded cascode amplifier.
+   <h2>3.2.4 Dynamic Latched Comaparator</h2>
+   <section>
+   <h2>3.2.4 Final Integration</h2>
+   <section>
+   <h2>3.2.4 Output Wavform Using Differential Amplifier</h2>
+   <section>
+   <h2>3.2.4 Complete Output Wavform </h2>
+   <section>
+</div>
+<div id="chapter5">
+    <hr>
+    <h1  style="text-align: center;">Chapter : 05</h1>
+    <h1  style="text-align: center;">Conclusion and future scope</h1>
+    <hr>
+    <h2>5.1 Conclusion</h2>
+    <section>Therefore above design presents the design of Sigma-Delta ADC,which converts analog signal to digital signal which has low power,performance efficient,high accuracy,high resolution,low latency.This Delta Sigma ADC have Delta-Sigma modulator which is heart of delta sigma ADC, which is majorly responsible for conversion of analog signal to digital signal, to over-sample the input signal,and to remove noise from lower frequencies i.e noise shaping.The efficiency of the design was reasonable for input of 1.8V.The latched comparator is responsible for producing required digital signal for corresponding input analog signal .The complete design was
+simulated and implemented in Cadence Virtuoso UMC 180nm technology
+    </section>
+    <h2>5.2 Future scope</h2>
+    <section>
+        Usage of programmable Gain, where gain can be set,programmed directly without undergoing regerous calculations.Also Noise Cancellation can be involved ,where in external noice interfernce can be reduced.Also, we can make use of the auto power on/off mechanism,where device can automatically turn on and off,when worn or taken off.
+<br> Therefore,the things which can be looked in future scope are
+<br>
+<br> - Programmable Gain
+<br> - Noise cancellation
+<br> - Auto Power on/off
+    </section>
+   
+</div>
+</body>
+</html>
